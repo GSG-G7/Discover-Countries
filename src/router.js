@@ -1,9 +1,11 @@
+const handler = require('./handlers/index');
+
 const router = (req, res) => {
   const endpoint = req.url;
   if (endpoint === '/') {
     // handleHome;
   } else if (endpoint.includes('/public')) {
-    // handleStatics;
+    handler.handleStatics(req, res, endpoint);
   } else {
     res.writeHead(404, { 'Content-Type': 'text/html' });
     res.end('<h1>Page Not Found</h1>');
