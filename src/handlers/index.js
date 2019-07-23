@@ -1,3 +1,4 @@
 const handleHome = require('./handleHome');
-console.log(handleHome);
-module.exports = { handleHome };
+const handleStatics = require('./handleStatics');
+
+module.exports = { handleHome, handleStatics };
