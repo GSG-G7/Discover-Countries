@@ -1,0 +1,32 @@
+{
+  "name": "discovercountries",
+  "version": "1.0.0",
+  "description": "Autocomplete website - [Asem,Mai,Asmaa,yosef]",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/test.js | tap-spec",
+    "watch": "nodemon ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSG-G7/Discover-Countries.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSG-G7/Discover-Countries/issues"
+  },
+  "homepage": "https://github.com/GSG-G7/Discover-Countries#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "nodemon": "^1.19.1",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0"
+  }
+}
