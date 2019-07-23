@@ -12,7 +12,7 @@ const handleStatics = (req, res, endpoint) => {
     html: 'text/html',
     ico: 'image/x-icon',
   };
-  const pathFile = path.join(__dirname, '..', 'public', ...pathStat);
+  const pathFile = path.join(__dirname, '..', '..', ...pathStat);
   fs.readFile(pathFile, (error, file) => {
     if (error) {
       res.writeHead(404, { 'Content-Type': 'text/html' });

@@ -3,7 +3,7 @@ const handler = require('./handlers/index');
 const router = (req, res) => {
   const endpoint = req.url;
   if (endpoint === '/') {
-    // handleHome;
+    handler.handleHome(res);
   } else if (endpoint.includes('/public')) {
     handler.handleStatics(req, res, endpoint);
   } else {
