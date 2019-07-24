@@ -10,12 +10,11 @@ const apiRequest = (url, callback) => {
   xhr.send();
 };
 
-
-const filterData = (arr, value) => {  
-  const specificCountries = arr.filter((item)=>{
+const filterData = (arr, value) => {
+  const specificCountries = arr.filter((item) => {
     console.log(item.toLowerCase());
-    return item.toLowerCase().indexOf(value) === 0 ;
-  })
+    return item.toLowerCase().indexOf(value) === 0;
+  });
 
   return specificCountries;
 };
