@@ -23,13 +23,18 @@ input.addEventListener('input', () => {
 
 const displayData = (country, cities) => {
   const countryBox = createEle('div', 'main__country');
+  const countryLink = createEle('a', 'counrty__link');
   const countryName = createEle('h2', 'country__name');
   countryName.textContent = country;
-  countryBox.appendChild(countryName);
+  countryLink.appendChild(countryName);
+  countryBox.appendChild(countryLink);
   document.querySelector('.main__results').appendChild(countryBox);
+  countryLink.href = `#${country}`;
+  const citiesList = createEle('ul', 'country__cities');
+  citiesList.id = `${country}`;
+
   // Add cities to each countries div
   cities.forEach((city) => {
-    const citiesList = createEle('ul', 'country__cities');
     const cityItem = createEle('li', 'country__item');
     cityItem.textContent = city;
     citiesList.appendChild(cityItem);
