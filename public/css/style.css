@@ -6,9 +6,14 @@
 
 body {
   max-width: 100%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
-  background: linear-gradient(to left bottom, rgba(0, 0, 0, 0.7), rgba(0,0,0,.7) ),url(../assets/back.jpg) no-repeat;
+  background: linear-gradient(
+      to left bottom,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(../assets/back.jpg) no-repeat;
   background-size: cover;
 }
 
@@ -20,7 +25,7 @@ body {
 }
 
 .header * {
-  margin: .5em;
+  margin: 0.5em;
 }
 
 .main {
@@ -30,5 +35,24 @@ body {
 }
 
 .main__input {
-  padding: .7rem 2rem;
+  padding: 0.7rem 2rem;
+}
+.main__results {
+  display: flex;
+  flex-direction: column;
+}
+.main__country {
+  border: 1px solid #fff;
+  margin: 1rem;
+}
+.country__name {
+  margin: 1rem 0;
+  cursor: pointer;
+}
+.country__cities {
+  list-style: none;
+  display: none;
+}
+.country__item {
+  margin: 1rem 1.2rem;
 }
