@@ -7,6 +7,7 @@
     "test": "test"
   },
   "scripts": {
+    "start": "node ./src/server.js",
     "test": "node test/test.js | tap-spec",
     "watch": "nodemon ./src/server.js"
   },
