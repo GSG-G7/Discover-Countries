@@ -9,3 +9,17 @@ const apiRequest = (url, callback) => {
   xhr.open('GET', url, true);
   xhr.send();
 };
+
+
+const filterData = (arr, value) => {  
+  const specificCountries = arr.filter((item)=>{
+    console.log(item.toLowerCase());
+    return item.toLowerCase().indexOf(value) === 0 ;
+  })
+
+  return specificCountries;
+};
+
+if (typeof module !== 'undefined') {
+  module.exports = filterData;
+}
