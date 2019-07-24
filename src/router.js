@@ -6,7 +6,9 @@ const router = (req, res) => {
     handler.handleHome(res);
   } else if (endpoint.includes('/public')) {
     handler.handleStatics(req, res, endpoint);
-  } else {
+  } else if (endpoint === '/API') {
+    handler.handleD(res);
+  }else {
     res.writeHead(404, { 'Content-Type': 'text/html' });
     res.end('<h1>Page Not Found</h1>');
   }
