@@ -1,26 +1,21 @@
-const input = document.querySelector('.main__input');
+const input = document.querySelector(".main__input");
+const { value } = input;
 
-input.addEventListener('input', () => {
+const filter = (data, value) => {
+  const allCountries = Object.keys(data);
+  const specificCountries = allCountries.filter(
+    item => item.toLowerCase().indexOf(value) === 0
+  );
 
-  apiRequest('/API', (data) => {
-    const value = input.value;
-    const allCountries = Object.keys(data);
-
-    const specificCountries = allCountries.filter((item) => {
-
-      return item.toLowerCase().indexOf(value) === 0;
+  if (value !== "") {
+    specificCountries.forEach(item => {
+      collectData(item, data[item]);
     });
-
-    if (value !== "") {
-        specificCountries.forEach((item) => {
-        collectData(item, data[item]);
-      })
-    }
-
-  });
-})
-
-
-const collectData = (country, cities)=>{
-    
-}
+  }
+};
+input.addEventListener("input", () => {
+  apiRequest("/API", filter);
+});
+const collectData = (country, cities) => {
+  console.log(country, cities);
+};
