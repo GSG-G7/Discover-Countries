@@ -8,7 +8,7 @@ const router = (req, res) => {
     handler.handleStatics(req, res, endpoint);
   } else if (endpoint === '/API') {
     handler.handleD(res);
-  }else {
+  } else {
     res.writeHead(404, { 'Content-Type': 'text/html' });
     res.end('<h1>Page Not Found</h1>');
   }
