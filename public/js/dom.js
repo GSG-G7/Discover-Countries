@@ -5,19 +5,25 @@ const createEle = (element, className) => {
   return domElement;
 };
 
+let t = null;
 input.addEventListener('input', () => {
-  apiRequest('/API', (data) => {
-    const value = input.value.toLowerCase().trim();
-    const allCountries = Object.keys(data);
-    const specificCountries = filterData(allCountries , value);
- 
-    if (value !== '') {
-      document.querySelector('.main__results').textContent = '';
-      specificCountries.forEach((item) => {
-        displayData(item, data[item]);
-      });
-    }
-  });
+  
+  clearTimeout(t);
+  t = setTimeout(() => {
+    apiRequest('/API', (data) => {
+      const value = input.value.toLowerCase().trim();
+      const allCountries = Object.keys(data);
+      const specificCountries = filterData(allCountries, value);
+
+      if (value !== '') {
+        document.querySelector('.main__results').textContent = '';
+        specificCountries.forEach((item) => {
+          displayData(item, data[item]);
+        });
+      }
+    });
+  }, 800);
+
 });
 
 const displayData = (country, cities) => {
