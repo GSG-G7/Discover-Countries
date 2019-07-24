@@ -9,9 +9,8 @@ input.addEventListener('input', () => {
   apiRequest('/API', (data) => {
     const value = input.value.toLowerCase().trim();
     const allCountries = Object.keys(data);
-    const specificCountries = allCountries.filter(
-      item => item.toLowerCase().indexOf(value) === 0,
-    );
+    const specificCountries = filterData(allCountries , value);
+ 
     if (value !== '') {
       document.querySelector('.main__results').textContent = '';
       specificCountries.forEach((item) => {
