@@ -1,4 +1,5 @@
 const input = document.querySelector('.main__input');
+const results = document.querySelector('.main__results');
 const createEle = (element, className) => {
   const domElement = document.createElement(element);
   domElement.classList.add(className);
@@ -7,7 +8,6 @@ const createEle = (element, className) => {
 
 let t = null;
 input.addEventListener('input', () => {
-  
   clearTimeout(t);
   t = setTimeout(() => {
     apiRequest('/API', (data) => {
@@ -16,14 +16,15 @@ input.addEventListener('input', () => {
       const specificCountries = filterData(allCountries, value);
 
       if (value !== '') {
-        document.querySelector('.main__results').textContent = '';
+        results.textContent = '';
         specificCountries.forEach((item) => {
           displayData(item, data[item]);
         });
+      } else {
+        document.querySelector('.main__results').textContent = '';
       }
     });
   }, 800);
-
 });
 
 const displayData = (country, cities) => {
@@ -33,10 +34,10 @@ const displayData = (country, cities) => {
   countryName.textContent = country;
   countryLink.appendChild(countryName);
   countryBox.appendChild(countryLink);
-  document.querySelector('.main__results').appendChild(countryBox);
+  results.appendChild(countryBox);
   countryLink.href = `#${country}`;
   const citiesList = createEle('ul', 'country__cities');
-  citiesList.id = `${country}`;
+  citiesList.id = country;
 
   // Add cities to each countries div
   cities.forEach((city) => {
