@@ -7,7 +7,6 @@ const createEle = (element, className) => {
 
 let t = null;
 input.addEventListener('input', () => {
-  
   clearTimeout(t);
   t = setTimeout(() => {
     apiRequest('/API', (data) => {
@@ -20,10 +19,11 @@ input.addEventListener('input', () => {
         specificCountries.forEach((item) => {
           displayData(item, data[item]);
         });
+      } else {
+        document.querySelector('.main__results').textContent = '';
       }
     });
   }, 800);
-
 });
 
 const displayData = (country, cities) => {
