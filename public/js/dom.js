@@ -1,4 +1,5 @@
 const input = document.querySelector('.main__input');
+const results = document.querySelector('.main__results');
 const createEle = (element, className) => {
   const domElement = document.createElement(element);
   domElement.classList.add(className);
@@ -15,7 +16,7 @@ input.addEventListener('input', () => {
       const specificCountries = filterData(allCountries, value);
 
       if (value !== '') {
-        document.querySelector('.main__results').textContent = '';
+        results.textContent = '';
         specificCountries.forEach((item) => {
           displayData(item, data[item]);
         });
@@ -33,7 +34,7 @@ const displayData = (country, cities) => {
   countryName.textContent = country;
   countryLink.appendChild(countryName);
   countryBox.appendChild(countryLink);
-  document.querySelector('.main__results').appendChild(countryBox);
+  results.appendChild(countryBox);
   countryLink.href = `#${country}`;
   const citiesList = createEle('ul', 'country__cities');
   citiesList.id = `${country}`;
