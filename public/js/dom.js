@@ -37,7 +37,7 @@ const displayData = (country, cities) => {
   results.appendChild(countryBox);
   countryLink.href = `#${country}`;
   const citiesList = createEle('ul', 'country__cities');
-  citiesList.id = `${country}`;
+  citiesList.id = country;
 
   // Add cities to each countries div
   cities.forEach((city) => {
