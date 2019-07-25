@@ -1,64 +1,84 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  max-width: 100%;
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  background: linear-gradient(
-      to left bottom,
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.7)
-    ),
-    url(../assets/back.jpg) no-repeat;
-  background-size: cover;
+    max-width: 100%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    background: linear-gradient(to left bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../assets/back1.jpg) no-repeat;
+    background-size: cover;
+    height: auto;
 }
 
 .header {
-  margin: 4rem 0;
-  width: 100%;
-  text-align: center;
-  color: #fff;
+    margin: 4rem 0 2rem 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
 }
 
 .header * {
-  margin: 0.5em;
+    margin: 0.5em;
 }
 
 .main {
-  width: 100%;
-  text-align: center;
-  color: #fff;
+    width: 100%;
+    text-align: center;
+    color: #fff;
 }
 
 .main__input {
-  padding: 0.7rem 2rem;
+    padding: 0.7rem 6rem;
+    border-radius: 70px;
+    border: 1px solid rgb(134, 134, 134);
+    font-size: 18px;
+    outline: none;
 }
+
 .main__results {
-  display: flex;
-  flex-direction: column;
+    width: 70%;
+    margin: auto;
 }
+
 .main__country {
-  border: 1px solid #fff;
-  margin: 1rem;
+    margin: 2rem;
 }
+
 .country__name {
-  margin: 1rem 0;
-  cursor: pointer;
+    margin: 1rem 0;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 16px 0;
+    border: 1px solid rgb(134, 134, 134);
+    border-radius: 11px;
 }
+
+.counrty__link {
+    text-decoration: none;
+}
+
 .country__cities {
-  list-style: none;
-  display: none;
-  transition: all 0.5s ease-in-out;
-  height: 0;
+    list-style: none;
+    display: none;
+    transition: all 0.5s ease-in-out;
+    height: 0;
 }
+
 .country__cities:target {
-  height: auto;
-  display: inline-block;
+    height: auto;
+    display: inline-block;
 }
+
 .country__item {
-  margin: 1rem 1.2rem;
+    margin: 1rem 1.2rem;
+    display: inline-block;
+    background-color: white;
+    color: black;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 4px #000;
+    border-radius: 5%;
 }
