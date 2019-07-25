@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const handleH = (res) => {
+const handleAPI = (res) => {
   const homePath = path.join(__dirname, '..', 'API', 'data.json');
   fs.readFile(homePath, (error, file) => {
     if (error) {
@@ -14,4 +14,4 @@ const handleH = (res) => {
   });
 };
 
-module.exports = handleH;
+module.exports = handleAPI;
